@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background: #E2D9B9;
+    height: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo {
+    display: inline-flex;
+    float: left;
+    width: 100%;
+}
+
+#navbar__logo img {
+    pointer-events: none;
+    cursor: default;
+    position: absolute;
+    left: 5%;
+    bottom: 2%;
+    width: 100%;
+    max-width: 280px;
+}
+
+.navbar__menu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    right: 7%;
+    bottom: 35%;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: right;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    font-size: 10px;
+    width: 100%;
+}
+
+.navbar__links:hover {
+    background-color: #DB1F26;
+    border-radius: 25px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.24),0 9px 10px 0 rgba(0,0,0,0.19);
+}
+
+@media screen and (max-width: 960px) {
+    
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        background: #E2D9B9;
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    .navbar__menu.active {
+        background: #E2D9B9;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+
+    #navbar__logo img {
+        position: absolute;
+        left: 10%;
+        bottom: 9%;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: white;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+/* New Address! */
+
+.address { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.address__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.words__container h1{
+    font-family: "Urbanist", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+}
+
+.words__container p {
+    font-family: "Zen Kurenaido", system-ui;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.addyimg__container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 20px;
+}
+
+.addyimg__container img {
+    max-width: 100%;
+    width: 80%;
+    height: auto;
+    padding: 0px;
+    border-radius: 20px;
+    margin-left: 45px;
+}
+
+.addyimg__container a:hover img {
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.24),0 9px 10px 0 rgba(0,0,0,0.19);
+}
+
+.picture__container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.picture__container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    padding: 0px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.24),0 9px 10px 0 rgba(0,0,0,0.19);
+}
+
+
+@media screen and (max-width: 960px) {
+    
+    .address {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .address__container, .picture__container {
+        flex: none;
+        width: 100%;
+    }
+
+}
+
+/* breaker plus title */
+
+.breaker__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.breaker {
+    margin: 0 auto;
+    width: 90%;
+    border: none;
+    border-top: 5px solid #5B96A5;
+    border-radius: 8px;
+}
+
+
+/* Populare Foods ! */
+
+.popularfood {
+    display: block;
+}
+
+.popularfood h1 {
+    font-family: "Urbanist", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    top: -50px;
+}
+
+.popularfood__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #5B96A5;
+    border-radius: 50px;
+    width: 95%;
+    margin: auto;
+}
+
+.food__item:first-child {
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+.food__item:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.food__item img{
+    width: 80%;
+    height: auto;
+}
+
+@media screen and (max-width: 960px) {
+    
+    .popularfood__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .food__item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .food__item:nth-child(2) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .food__item:nth-child(3) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .food__item:nth-child(4) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .food__item:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .food__item img {
+        width: 100%;
+    }
+
+}
+
+/* Review Section */
+
+.review{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.review__card {
+    background-color: #DB1F26;
+    color: #fff;
+    max-width: 100%;
+    width: 95%;
+    padding: 4em 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review__content {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.review__header {
+    display: flex;
+    flex: .2;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+
+.reviewer__name h3{
+    font-family: "Urbanist", sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.rating__image {
+    width: 100px;
+    height: auto;
+}
+
+.body__container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-right: 100px;
+    margin-top: 20px;
+    max-width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.review__body p {
+    font-family: "Zen Kurenaido", system-ui;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    line-height: 1.4em;
+}
+
+.swiper {
+    width: 95%;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    color: white;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+    color: white;
+    display: none;
+}
+
+@media screen and (max-width: 1410px) {
+    
+    .review__card {
+        width: 95%;
+        padding: 1.5em;
+    }
+
+    .review__content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .review__header {
+        margin: 0;
+        align-items: center;
+    }
+
+    .body__container {
+        margin: 0;
+        max-width: 100%;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 960px) { 
+
+    .swiper .swiper-button-next,
+    .swiper .swiper-button-prev {
+    color: white;
+    display: initial;
+}
+}
+
+/* More Food Section */
+
+.morefood__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #5B96A5;
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
+    justify-self: center;
+    align-self: center;
+}
+
+.morefood__items:first-child {
+    grid-row: 1;
+    grid-column: 1;
+
+}
+
+.morefood__items:nth-child(2) {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.morefood__items:nth-child(3) {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+
+}
+
+.morefood__items img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 960px) { 
+    
+    .morefood__container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        grid-gap: 0;
+    }
+
+    .morefood__items:first-child {
+        grid-row: 1;
+        grid-column: 1;
+    
+    }
+    
+    .morefood__items:nth-child(2) {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    
+    .morefood__items:nth-child(3) {
+        grid-row: 3;
+        grid-column: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+    .morefood_items img {
+        max-width: 100%;
+        width: 50%;
+    }
+}
+
+/* Socials! */
+
+.socials {
+    display: block;
+}
+
+.socials h1 {
+    font-family: "Urbanist", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    top: -50px;
+}
+
+#socials__container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.socials__items {
+    max-width: 100%;
+}
+
+.socials__items a:hover  img {
+    border-radius: 300px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.24),0 9px 10px 0 rgba(0,0,0,0.19);
+}
+
+@media screen and (max-width: 1150px) { 
+    
+    #socials__container {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .socials__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; 
+        width: 150px;
+    }
+
+    .socials__items img {
+        max-width: 100%;
+        width: 80%;
+    }
+
+    .socials h1 {
+        top: -50px; 
+    }
+
+}
+
+/* Menu - James wants to do it / Make changes later on */
+
+.mbreaker__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.menu__breaker {
+    margin: 0 auto;
+    width: 90%;
+    border: none;
+    border-top: 5px solid #5B96A5;
+    border-radius: 8px;
+}
+
+.menu__breaker2 {
+    margin: 0 auto;
+    width: 60%;
+    border: none;
+    border-top: 5px solid #5B96A5;
+    border-radius: 8px;
+}
+
+.menu {
+    display: block;
+}
+
+.menu h1 {
+    font-family: "Urbanist", sans-serif;
+    text-align: center;
+}
+
+.menu__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #5B96A5;
+    border-radius: 20px;
+    max-width: 80%;
+    margin: auto;
+}
+
+.menu__items {
+    padding: 10px;
+}
+
+.menu__items img {
+    pointer-events: none;
+    cursor: default;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 960px) {
+
+    .menu__container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .menu__items {
+        padding: 20px;
+    }
+
+    .menu__items img {
+        pointer-events: none;
+        cursor: default;
+    }
+
+}
